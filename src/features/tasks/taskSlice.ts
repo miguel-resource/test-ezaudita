@@ -47,8 +47,8 @@ const taskSlice = createSlice({
             const id = action.payload.id
             const taskIndex = state.findIndex((task) => task.id === id)
 
-            if (taskFounded) {
-                
+            if (taskIndex) {
+                state[taskIndex] = action.payload
             }
         }
     }
