@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 //interfaces 
-import { Route } from './../../interfaces/Route';
+import { Route } from '../../models/Route';
 //gsap
 import { TweenMax, Power3, gsap } from 'gsap';
 
@@ -11,7 +11,7 @@ export default function Navbar(): JSX.Element {
   const routes: Array<Route> = [
     {
       label: "Tasks",
-      to: "/"
+      to: "/task-list"
     },
     {
       label: "Api Movies",

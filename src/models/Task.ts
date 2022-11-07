@@ -1,7 +1,11 @@
 export interface Task {
     id?: string;
     title: string;
-    status: boolean;
+    status?: boolean;
     priority: string;
     description: string;
+}
+
+export interface TaskForms extends Task {
+    saveForm: () => void;
 }

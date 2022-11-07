@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // components 
 import Navbar from './components/navbar/Navbar';
-import TaskList from './components/tasks/TaskList';
-import MoviesList from './components/api-movies/MoviesList';
+import TaskList from './pages/tasks/components/TaskList';
+import MoviesList from './pages/api-movies/MoviesList';
+import TaskForm from './pages/tasks/components/TaskForm';
 
 function App() {
   return (
@@ -10,8 +11,21 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
-          <Route path='/' element={<TaskList />}></Route>
-          <Route path='/api-movies' element={<MoviesList />}></Route>
+
+          {/* to-do list */}
+          <Route path='/task-list' element={<TaskList />}>
+            <Route path='/task-list/create-task' element={<TaskForm />}></Route>
+            <Route path='/task-list/edit-task/:id' element={<TaskForm />}></Route>
+          </Route>
+          <Route path='/' element={<Navigate to='/task-list' replace />}></Route>
+
+          {/* Api movies */}
+          <Route path='/api-movies' element={<MoviesList />}>
+
+          </Route>
+
+          {/* ?? */}
+
         </Routes>
       </BrowserRouter>
     </>

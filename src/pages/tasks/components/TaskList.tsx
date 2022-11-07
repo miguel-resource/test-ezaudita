@@ -1,33 +1,31 @@
-import { useNavigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
 //interfaces
-import { Task } from './../../interfaces/Task';
-
+import { Task } from '../../models/Task';
 //components
 import TaskItem from "./TaskItem";
 
+
 export default function TaskList(): JSX.Element {
-    const navigate = useNavigate()
+
     const tasks: Array<Task> = useSelector((data: any) => data.tasks)
-
-    const navigateForm = (): void => {
-        navigate('/');
-    }
-
-
+    
     return (
         <div
-            className="bg-zinc-700 h-screen">
+            className="bg-zinc-700 h-full min-h-screen p-8">
 
             <div
-                className="w-1/2 mx-auto">
+                className="w-3/5 mx-auto">
 
-                <button
-                    onClick={navigateForm}
-                    className="bg-blue-600 text-slate-200 p-4 my-6 rounded-xl ">
+                <Link
+                    to="./create-task"
+                    className="bg-blue-600 text-slate-200 p-3 ease-in hover:bg-blue-500 hover:shadow-3xl hover:scale-105 my-6 rounded-xl ">
                     + Add task
-                </button>
+                </Link>
+
+                <div className="mt-5 mb-6">
+                    <Outlet ></Outlet>
+                </div>
 
                 {/* list task */}
                 {tasks.map((task: Task) => {
