@@ -14,8 +14,8 @@ export default function Navbar(): JSX.Element {
       to: "/task-list"
     },
     {
-      label: "Api Movies",
-      to: "/api-movies"
+      label: "Api Store",
+      to: "/api-store"
     },
     {
       label: "??",

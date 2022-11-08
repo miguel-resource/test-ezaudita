@@ -4,9 +4,9 @@ import { deleteTask, completeTask } from './../../../redux/tasks/taskSlice'
 import { useEffect, useRef, useState } from "react";
 import gsap, { Power3 } from 'gsap';
 import TaskForm from './TaskForm'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function TaskItem({ title, description, id, priority, status }: Task) {
+export default function TaskItem({ title, description, id, priority, status }: Task): JSX.Element{
 
     const dispatch = useDispatch()
     

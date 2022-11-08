@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-// components 
+/* Components */
 import Navbar from './components/navbar/Navbar';
+// page: to-do
 import TaskList from './pages/tasks/components/TaskList';
-import MoviesList from './pages/api-movies/MoviesList';
 import TaskForm from './pages/tasks/components/TaskForm';
+// page: products
+import ProductsList from './pages/api-store/components/ProductsList';
+import SearchProduct from './pages/api-store/components/SearchProduct';
+
 
 function App() {
   return (
@@ -11,7 +15,6 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
-
           {/* to-do list */}
           <Route path='/task-list' element={<TaskList />}>
             <Route path='/task-list/create-task' element={<TaskForm />}></Route>
@@ -19,9 +22,13 @@ function App() {
           </Route>
           <Route path='/' element={<Navigate to='/task-list' replace />}></Route>
 
-          {/* Api movies */}
-          <Route path='/api-movies' element={<MoviesList />}>
+          {/* Api store */}
+          <Route path='/api-store' element={<ProductsList />}>
+            <Route path='/api-store/home' element={<Navigate to='/api-store'/>}></Route>
+            <Route path='/api-store/search' element={<SearchProduct/>}></Route>
+            <Route>
 
+            </Route>
           </Route>
 
           {/* ?? */}

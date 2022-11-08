@@ -9,7 +9,7 @@ import { Task } from "../../../models/Task";
 import { addTask, editTask } from '../../../redux/tasks/taskSlice'
 
 
-export default function TaskForm() {
+export default function TaskForm():JSX.Element {
     const dispatch = useDispatch()
     const defaultState: Task = {
         title: "",

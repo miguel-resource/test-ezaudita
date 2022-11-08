@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { useSelector } from 'react-redux';
 //interfaces
-import { Task } from '../../models/Task';
+import { Task } from '../../../models/Task';
 //components
 import TaskItem from "./TaskItem";
 
