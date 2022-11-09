@@ -16,13 +16,13 @@ export default function Banner() {
     return (
         <div
             ref={refBanner}
-            className="banner opacity-0 rounded-xl bg-[url('/src/assets/imgs/banner.jpg')] bg-cover mx-auto h-60  shadow-xl  w-11/12 pt-9 p-10">
+            className="banner opacity-0 rounded-xl bg-[url('/src/assets/imgs/banner.jpg')] text-md bg-cover mx-auto h-60  shadow-xl  w-11/12 pt-9 p-10  | sm:text-lg lg:h-64 ">
             <h3
-                className="bg-slate-800 text-white p-2 font-mono font-semibold text-xl  w-1/4 mt-12">
+                className="bg-slate-800 text-white p-2 font-mono font-semibold w-1/2  mt-20  | md:w-2/6 | lg:w-1/6  lg:mt-20">
                 New Clothes!!
             </h3>
             <h3
-                className="bg-orange-600 shadow-lg text-white p-2 font-mono font-semibold text-xl  w-3/6 mt-2">
+                className="bg-orange-600 shadow-lg text-white p-2 font-mono font-semibold w-2/2 mt-2 |  md:w-3/5 | lg:w-2/5">
                 Easy way to check and shop our products!
             </h3>
         </div>

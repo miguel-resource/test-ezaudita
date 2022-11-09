@@ -28,11 +28,11 @@ export default function FilterProducts({ title, price, category, description, im
         <h3></h3> : <h3>no sé encontró...</h3>}
 
       <div
-        className="grid grid-cols-4 gap-4">
+        className="grid grid-cols-2 gap-2 | sm:grid-cols-3 sm:gap-8 | md:grid-cols-4 | lg:gap-12 ">
 
         {data.map((product: Product) => {
           return (
-            <Item title={product.title} price={product.price} category={product.category} description={product.description} image={product.image} rating={product.rating}></Item>
+            <Item key={product.id} title={product.title} price={product.price} category={product.category} description={product.description} image={product.image} rating={product.rating}></Item>
 
           )
         })}

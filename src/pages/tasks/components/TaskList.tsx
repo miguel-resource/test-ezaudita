@@ -15,7 +15,7 @@ export default function TaskList(): JSX.Element {
             className="bg-zinc-700 h-full min-h-screen p-8">
 
             <div
-                className="w-3/5 mx-auto">
+                className="w-3/5 mx-auto | lg:w-2/5 xl:w-2/6">
 
                 <Link
                     to="./create-task"

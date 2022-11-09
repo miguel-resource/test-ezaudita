@@ -20,7 +20,7 @@ export default function Navbar(): JSX.Element {
       to: "/task-list"
     },
     {
-      label: "Api Store",
+      label: "Store",
       to: "/api-store"
     },
     {
@@ -31,7 +31,7 @@ export default function Navbar(): JSX.Element {
   const activeCustom = "rounded-xl bg-zinc-900 text-slate-300 p-1 shadow-xl"
   const normal = "text-slate-300 p-1"
   const linkButtons = useRef<HTMLAnchorElement>(null)
-  const cart: Array<Product> = useSelector((data:any) => data.cart)
+  const cart: Array<Product> = useSelector((data: any) => data.cart)
 
   useEffect(() => {
     gsap.to(
@@ -39,7 +39,7 @@ export default function Navbar(): JSX.Element {
       .6,
       {
         opacity: 1,
-        rotate: 45, 
+        rotate: 45,
         y: -20,
         ease: Power3.easeIn
       }
@@ -49,14 +49,14 @@ export default function Navbar(): JSX.Element {
   return (
     <div className='bg-zinc-800 p-3 flex'>
 
-      <div className='grid grid-cols-3 gap-10 mx-auto w-8/12 text-center font-jetbrains'>
+      <div className='grid grid-cols-3 text-xs gap-10 mx-auto w-8/12 text-center font-jetbrains | sm:text-sm'>
         {routes.map((route: Route, index: number) => {
           return (
             <NavLink
               key={index}
               ref={linkButtons}
               to={route.to}
-              className={({isActive}) => (isActive ? activeCustom : normal)}>
+              className={({ isActive }) => (isActive ? activeCustom : normal)}>
               {route.label}
             </NavLink>
           )
@@ -70,12 +70,11 @@ export default function Navbar(): JSX.Element {
       </button>
 
       <div
-        className='flex w-20 text-white pt-2'>
-          <FaShoppingCart className='block w-14'></FaShoppingCart>
-          <p className='block text-sm'>
-{cart.length}
-          </p>
-          
+        className='w-20 text-white pt-2 hidden | sm:flex'>
+        <FaShoppingCart className='block w-14'></FaShoppingCart>
+        <p className='block text-sm'>
+          {cart.length}
+        </p>
       </div>
     </div>
   )

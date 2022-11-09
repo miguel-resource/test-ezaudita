@@ -16,13 +16,13 @@ export default function GridList({ category }: SearchProduct): JSX.Element {
         getByCategory(category).then((response: any) => {
             setData(response.data)
         })
-        gsap.fromTo(refGrid, { x: -30, opacity: 0 }, { opacity: 1, x: 0, duration: 2, ease: Power3.easeInOut })
+        gsap.fromTo(refGrid, { x: -30, opacity: 0, delay: 1.9 }, { opacity: 1, x: 0, duration: 2, ease: Power3.easeInOut })
     }, [])
 
     return (
         <div
             ref={(el: any) => { refGrid = el }}
-            className="w-10/12 mx-auto mt-12 pb-20">
+            className="w-10/12 mx-auto mt-12 pb-20 ">
 
             <h3
                 className="uppercase tracking-widest mb-4">
@@ -30,7 +30,7 @@ export default function GridList({ category }: SearchProduct): JSX.Element {
             </h3>
 
             <div
-                className="grid grid-cols-4 gap-2">
+                className="grid grid-cols-2 gap-8 | sm:grid-cols-3  | lg:grid-cols-4 xl:gap-14">
                 {data.map((data: Product) => {
                     return (
                         <Item
