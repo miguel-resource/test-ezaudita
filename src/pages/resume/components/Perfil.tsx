@@ -23,7 +23,7 @@ export default function Perfil() {
                 className="grid mx-auto |  sm:grid-cols-2  md:w-10/12 lg:w-11/12">
                 <img
                     ref={(el: any) => { refImage = el }}
-                    src="/src/assets/imgs/perfil.jpg"
+                    src="https://firebasestorage.googleapis.com/v0/b/test-ezaudita.appspot.com/o/perfil.jpg?alt=media&token=43c3c1e5-26de-4653-a0f6-05c242f45a4b"
                     className="imagew-36 block mx-auto rounded-md shadow-xl flex-0 | sm:w-40 md:w-44 " />
                 <div
                     className="flex-1 mt-2 mx-auto font-jetbrains  text-slate-100 top-80 p-2  text-left">
