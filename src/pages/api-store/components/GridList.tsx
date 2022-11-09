@@ -22,7 +22,7 @@ export default function GridList({ category }: SearchProduct): JSX.Element {
     return (
         <div
             ref={(el: any) => { refGrid = el }}
-            className="w-10/12 mx-auto mt-12">
+            className="w-10/12 mx-auto mt-12 pb-20">
 
             <h3
                 className="uppercase tracking-widest mb-4">

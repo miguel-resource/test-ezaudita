@@ -23,6 +23,7 @@ export default function TaskForm():JSX.Element {
     const navigate = useNavigate()
 
     useEffect((): void => {
+
         if (params.id) {
             const findTask = tasks.find((task: Task) => task.id === params.id)
             findTask ? setTask(findTask) : setTask(defaultState)

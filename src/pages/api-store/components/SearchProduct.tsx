@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 import gsap, { Power3 } from 'gsap';
 /* models */
 import { Product } from '../../../models/Product';
@@ -20,9 +20,14 @@ export default function SearchProduct(): JSX.Element {
         }
     })
     let refFilterProducts = useRef(null);
+    let refInput = useRef(null);
+
+    useEffect(() => {
+        gsap.fromTo(refInput, { x: -500, opacity:0 }, { x:0, opacity:1 , duration: 1.2, ease: Power3.easeInOut })
+    }, [])
 
     const handleChange = (e: ChangeEvent<any>): void => {
-        gsap.to(refFilterProducts, { display: "block", ease: Power3.easeInOut, duration: 2 });
+        gsap.to(refFilterProducts, { display: "block", ease: Power3.easeInOut, duration: 1 });
         console.log(e.target.name)
         setProduct({
             ...product,
@@ -33,20 +38,30 @@ export default function SearchProduct(): JSX.Element {
 
     return (
         <>
-            <form>
-                <input onChange={handleChange} type="text" name='title' />
-            </form>
-
             <div
-                ref={(el: any) => { refFilterProducts = el }}
-                className="hidden w-10/12 mx-auto">
-                <FilterProducts
-                    title={product.title}
-                    price={product.price}
-                    category={product.category}
-                    description={product.description}
-                    image={product.image}
-                    rating={product.rating}></FilterProducts>
+                className="mx-auto w-10/12 mt-5">
+
+                <form>
+                    <input
+                        ref={(el: any) => { refInput = el }}
+                        placeholder="search product..."
+                        onChange={handleChange}
+                        className='w-10/12 p-1 outline-none rounded-md shadow-xl'
+                        type="text"
+                        name='title' />
+                </form>
+
+                <div
+                    ref={(el: any) => { refFilterProducts = el }}
+                    className="hidden mt-10 mx-auto">
+                    <FilterProducts
+                        title={product.title}
+                        price={product.price}
+                        category={product.category}
+                        description={product.description}
+                        image={product.image}
+                        rating={product.rating}></FilterProducts>
+                </div>
             </div>
         </>
     )
