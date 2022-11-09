@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 //interfaces 
 import { Route } from '../../models/Route';
 //gsap
-import { TweenMax, Power3, gsap } from 'gsap';
+import { Power3, gsap } from 'gsap';
 
 
 export default function Navbar(): JSX.Element {

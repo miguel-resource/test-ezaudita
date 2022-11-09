@@ -33,14 +33,14 @@ export default function GridList({ category }: SearchProduct): JSX.Element {
                 className="grid grid-cols-4 gap-2">
                 {data.map((data: Product) => {
                     return (
-                        <Item 
-                        key={data.id}
-                        title={data.title} 
-                        price={data.price} 
-                        category={data.category} 
-                        description={data.description} 
-                        image={data.image} 
-                        rating={data.rating}></Item>
+                        <Item
+                            key={data.id}
+                            title={data.title}
+                            price={data.price}
+                            category={data.category}
+                            description={data.description}
+                            image={data.image}
+                            rating={data.rating}></Item>
                     )
                 })}
             </div>
