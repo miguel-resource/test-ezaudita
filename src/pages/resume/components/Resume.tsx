@@ -39,7 +39,7 @@ export default function Resuem() {
             {/* hello and dark theme */}
             <div
                 ref={(el: any) => { refWelcome = el }}
-                className="flex w-10/12">
+                className="flex w-12/12">
                 <button
                     className=' bg-red-300 block p-2 rounded-full shadow-sm dark:bg-slate-300 dark:text-stone-900 text-white'
                     onClick={hanleChangeTheme}>

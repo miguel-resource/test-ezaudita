@@ -58,7 +58,7 @@ export default function Auth(): JSX.Element {
 
             <div
                    ref={(el:any) => {refAuth = el }}
-                className="w-1/2 mx-auto bg-zinc-900 rounded-lg shadow-xl p-9 opacity-0 scale-0 | lg:w-1/4">
+                className="w-8/12 mx-auto bg-zinc-900 rounded-lg shadow-xl p-9 opacity-0 scale-0 | md:w-2/5 | lg:w-1/4">
                 <form 
                 
                 onSubmit={handleSubmit}>
