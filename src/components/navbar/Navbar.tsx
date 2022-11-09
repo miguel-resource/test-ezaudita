@@ -24,8 +24,8 @@ export default function Navbar(): JSX.Element {
       to: "/api-store"
     },
     {
-      label: "??",
-      to: "/asd"
+      label: "Resume",
+      to: "/resume"
     },
   ]
   const activeCustom = "rounded-xl bg-zinc-900 text-slate-300 p-1 shadow-xl"
@@ -65,8 +65,8 @@ export default function Navbar(): JSX.Element {
 
       <button
         onClick={() => signOut(auth)}
-        className='text-center text-slate-200 '>
-        Cerrar sesión
+        className='text-center text-xs text-slate-200 '>
+        Log-Out
       </button>
 
       <div

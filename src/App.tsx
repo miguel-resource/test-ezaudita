@@ -10,6 +10,8 @@ import TaskForm from './pages/tasks/components/TaskForm';
 // page: products
 import ProductsList from './pages/api-store/components/ProductsList';
 import SearchProduct from './pages/api-store/components/SearchProduct';
+// page: resume
+import Resume from './pages/resume/components/Resume'
 
 /* models */
 import { Account } from './models/Account';
@@ -44,12 +46,11 @@ function App() {
             </Route>
           </Route>
 
+          {/* Resume */}
+          <Route path='/resume' element={<AuthRoute><Resume /></AuthRoute>}></Route>
 
-          
           {/* login */}
-              
           <Route path='/login' element={<Auth />}></Route>
-
         </Routes>
       </BrowserRouter>
     </>

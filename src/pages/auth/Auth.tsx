@@ -58,18 +58,18 @@ export default function Auth(): JSX.Element {
 
             <div
                    ref={(el:any) => {refAuth = el }}
-                className="w-1/2 mx-auto bg-zinc-900 rounded-lg shadow-xl p-9 opacity-0 scale-0">
+                className="w-1/2 mx-auto bg-zinc-900 rounded-lg shadow-xl p-9 opacity-0 scale-0 | lg:w-1/4">
                 <form 
                 
                 onSubmit={handleSubmit}>
                     <input
-                        className="block w-full h-9 p-1 bg-stone-600 rounded-md mb-4 text-slate-200"
+                        className="block w-full h-9 p-2 bg-stone-600 rounded-md mb-4 text-slate-200"
                         onChange={handleChange}
                         name="email"
                         placeholder="email"
                         type="email" />
                     <input
-                        className="block w-full h-9 p-1 bg-stone-600 rounded-md mb-4 text-slate-200"
+                        className="block w-full h-9 p-2 bg-stone-600 rounded-md mb-4 text-slate-200"
                         onChange={handleChange}
                         type="password"
                         name="password"
